@@ -1,3 +1,4 @@
+# load data
 sc <- read.table("synthetic_control.data", header = F, sep = "")
 # randomly sampled n cases from each class, to make it easy for plotting
 n <- 10
