@@ -1,4 +1,4 @@
-ibrary(neuralnet)
+library(neuralnet)
 
 # 1. creating the initial data, plotting
 data <- data.frame (
