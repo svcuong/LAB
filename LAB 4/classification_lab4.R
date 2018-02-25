@@ -1,5 +1,6 @@
-# extracting DWT coefficients (with Haar filter)
+# load data
 sc <- read.table("synthetic_control.data", header = F, sep = "")
+# extracting DWT coefficients (with Haar filter)
 library(wavelets)
 wtData <- NULL
 
