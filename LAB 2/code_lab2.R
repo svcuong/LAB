@@ -1,23 +1,31 @@
 
-# 2.1 Creating a scatter plot
-###################################################################
-#Using plot()
+#_____________________LAB 2____________________________________
+
+# Преджде, чем начать работу надо установить необходимые пакеты
+# Установить пакет ggplot2 для визуализации данных
+install.pacakges("ggplot2"
+
+                 
+# 1. Построение scatter plot
+##############################################
+# Использовать базовую функцию plot()
 plot(mtcars$wt, mtcars$mpg)
 
-#Using ggplot2
+# Использовать пакет ggplot2
+# Вызывать пакет ggplot2
 library(ggplot2)
+# Использовать функцию qplot                 
 qplot(mtcars$wt, mtcars$mpg)
 
-# Using ggplot2 if the two vectors are already in the same data frame
+# Если два вектора в одном фрейме данных
 qplot(wt, mpg, data=mtcars)
-# This is equivalent to:
+# Это эквивалено
 ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
-####################################################################
+###############################################
 
 
-
-# 2.2 Creating a Line Graph
-####################################################################
+# 2.2 Построение a Line Graph
+########################################################
 # Using plot()
 plot(pressure$temperature, pressure$pressure, type="l")
 # add points and/or multiple lines
