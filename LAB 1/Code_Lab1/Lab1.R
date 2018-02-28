@@ -35,7 +35,7 @@ data <- getURL('https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/m
                  ssl.verifyhost=FALSE, ssl.verifypeer=FALSE)
 
 # Чтение данных
-myfile<- read.csv(textConnection(myfile), sep = ",", header = TRUE)
+myfile<- read.csv(textConnection(data), sep = ",", header = TRUE)
 head(myfile)
 
 #######################################################################
