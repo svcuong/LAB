@@ -34,6 +34,7 @@ autoplot(fcfitets)
 # Задание 4: Использование метода Использование Exponential smoothing для прогнозирования
 arimats <- auto.arima(trainx)
 fcarimats <- forecast(arimats)
+fcarimats
 autoplot(fcarimats)
 
 #______________________LAB 3_________________________________________________________
