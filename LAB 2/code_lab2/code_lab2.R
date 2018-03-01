@@ -55,53 +55,50 @@ barplot(BOD$demand, names.arg=BOD$Time)
 # Использовать пакет ggplot2
 library(ggplot2)
 qplot(BOD$Time, BOD$demand, geom="bar", stat="identity")
-# Convert the x variable to a factor, so that it is treated as discrete
+# преобразование x в фактор
 qplot(factor(BOD$Time), BOD$demand, geom="bar", stat="identity")
 
 # Если два вектора в одном фрейме данных
-# Bar graph of values. This uses the BOD data frame, with the
-#"Time" column for x values and the "demand" column for y values.
 qplot(Time, demand, data=BOD, geom="bar", stat="identity")
 # эквивален:
 ggplot(BOD, aes(x=Time, y=demand)) + geom_bar(stat="identity")
 ##############################################################################
 
 
-# 2.4 Creating a Histogram
-# Using hist()
+# 2.4 Поспроение Histogram
+#  Использовать базовую функцию  hist()
 hist(mtcars$mpg)
-# Specify approximate number of bins with breaks
+# Указать количество bins с breaks
 hist(mtcars$mpg, breaks=10)
 
-# Using ggplot2
+# Использовать пакет ggplot2
 qplot(mtcars$mpg)
-
-# Using ggplot2 if the vector is in a data frame
+# Если два вектора в одном фрейме данных
 library(ggplot2)
 qplot(mpg, data=mtcars, binwidth=4)
-# This is equivalent to:
+# эквивален:
 ggplot(mtcars, aes(x=mpg)) + geom_histogram(binwidth=4)
 ###############################################################################
 
 
-# 2.5 Creating a Box Plot
-# Using plot()
+# 2.5 Поспроение Box Plot
+# Использовать базовую функцию  plot()
 plot(ToothGrowth$supp, ToothGrowth$len)
 
-# If the two vectors are in the same data frame
+# Если два вектора в одном фрейме данныхe
 # Formula syntax
 boxplot(len ~ supp, data = ToothGrowth)
 # Put interaction of two variables on x-axis
 boxplot(len ~ supp + dose, data = ToothGrowth)
 
-# Using ggplot2
+# Использовать пакет ggplot2
 library(ggplot2)
 qplot(ToothGrowth$supp, ToothGrowth$len, geom="boxplot")
 qplot(ToothGrowth$supp, ToothGrowth$len, geom="boxplot")
 
-# Using ggplot2 If the two vectors are already in the same data frame
+# Если два вектора в одном фрейме данных
 qplot(supp, len, data=ToothGrowth, geom="boxplot")
-# This is equivalent to:
+# эквивален:
 ggplot(ToothGrowth, aes(x=supp, y=len)) + geom_boxplot()
 ##################################################################################
 
