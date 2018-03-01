@@ -34,7 +34,7 @@ qplot(as.factor(mydat$black), mydat$re74, geom="boxplot")
 # или:
 ggplot(mydat, aes(x=as.factor(black), y=re74)) + geom_boxplot()
 
-# Задание 1.5: Вычисление количества элементов с black =0 и black =0. Создание фрейма данных из релуьтатов 
+# Задание 1.5: Вычисление количества элементов с black =0 и black =1. Создание фрейма данных из релуьтатов 
 # вычисления с 2 columns black и count, и построение bar graph для этого фрейма.
 black <- as.factor(c(0, 1))
 count0 <- length(subset(mydat, black == 0)$black)
