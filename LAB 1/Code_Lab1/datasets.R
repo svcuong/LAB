@@ -1,6 +1,8 @@
 
 # Import dataset from different sources
 # 1. URL using package data.table or Rcurl
+# https://vincentarelbundock.github.io/Rdatasets/datasets.html
+# http://www.stats.ox.ac.uk/pub/datasets/csb/
 library(data.table)
 mydat <- fread('https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/DAAG/cps1.csv')
 View(mydat)
