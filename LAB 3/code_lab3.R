@@ -1,6 +1,6 @@
 
 # Load packages
-library(M3comp)
+#library(M3comp)
 library(ggplot2)
 library(forecast)
 
@@ -23,3 +23,4 @@ timeseries <- M3[[2000]]$x
 arimats <- auto.arima(timeseries)
 fcarimats <- forecast(arimats)
 autoplot(fcarimats)
+
