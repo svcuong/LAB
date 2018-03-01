@@ -1,8 +1,8 @@
 
-#___________________ Задания для Лабораторной работы № 2___________________________________________
+#___________________ Р—Р°РґР°РЅРёСЏ РґР»СЏ Р›Р°Р±РѕСЂР°С‚РѕСЂРЅРѕР№ СЂР°Р±РѕС‚С‹ в„– 2___________________________________________
 
 ############################################################
-# Задание 1: Загрузка набора данных (Labour Training Evaluation Data) из источника данных:
+# Р—Р°РґР°РЅРёРµ 1: Р—Р°РіСЂСѓР·РєР° РЅР°Р±РѕСЂР° РґР°РЅРЅС‹С… (Labour Training Evaluation Data) РёР· РёСЃС‚РѕС‡РЅРёРєР° РґР°РЅРЅС‹С…:
 #url<https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/DAAG/nsw74psid1.csv>
 
 library(RCurl)
@@ -10,32 +10,32 @@ myfile <- getURL('https://raw.githubusercontent.com/vincentarelbundock/Rdatasets
 mydat <- read.csv(textConnection(myfile), header=T)
 head(mydat)
 
-# Задание 1.1: Построение scatter plot для columns age и re74 из mydat с использованием базовой функции
+# Р—Р°РґР°РЅРёРµ 1.1: РџРѕСЃС‚СЂРѕРµРЅРёРµ scatter plot РґР»СЏ columns age Рё re74 РёР· mydat СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј Р±Р°Р·РѕРІРѕР№ С„СѓРЅРєС†РёРё
 plot(mydat$age, mydat$re74)
 
-# Задание 1.2: Построение scatter plot для columns age и re74 из mydat с использованием пакета ggplot2
+# Р—Р°РґР°РЅРёРµ 1.2: РџРѕСЃС‚СЂРѕРµРЅРёРµ scatter plot РґР»СЏ columns age Рё re74 РёР· mydat СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј РїР°РєРµС‚Р° ggplot2
 library(ggplot2)
 qplot(mydat$age, mydat$re74)
 
-# или:
+# РёР»Рё:
 qplot(age, re74, data=mydat)
 
-# или:
+# РёР»Рё:
 ggplot(mydat, aes(x=age, y=re74)) + geom_point()
 
-# Задание 1.3: Построение Box Plot для re74 от black из mydat с использованием базовой функции plot()
+# Р—Р°РґР°РЅРёРµ 1.3: РџРѕСЃС‚СЂРѕРµРЅРёРµ Box Plot РґР»СЏ re74 РѕС‚ black РёР· mydat СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј Р±Р°Р·РѕРІРѕР№ С„СѓРЅРєС†РёРё plot()
 plot(as.factor(mydat$black), mydat$re74)
-# или:
+# РёР»Рё:
 boxplot(re74 ~ black, data = mydat)
 
-# Задание 1.4: Построение Box Plot для re74 от black из mydat с использованием пакета ggplot2
+# Р—Р°РґР°РЅРёРµ 1.4: РџРѕСЃС‚СЂРѕРµРЅРёРµ Box Plot РґР»СЏ re74 РѕС‚ black РёР· mydat СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј РїР°РєРµС‚Р° ggplot2
 library(ggplot2)
 qplot(as.factor(mydat$black), mydat$re74, geom="boxplot")
-# или:
+# РёР»Рё:
 ggplot(mydat, aes(x=as.factor(black), y=re74)) + geom_boxplot()
 
-# Задание 1.5: Вычисление количество элементов с black =0 и black =0. Создание фрейма данных из релуьтатов 
-# вычисления с 2 columns black и count, и построение bar graph для этого фрейма.
+# Р—Р°РґР°РЅРёРµ 1.5: Р’С‹С‡РёСЃР»РµРЅРёРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЌР»РµРјРµРЅС‚РѕРІ СЃ black =0 Рё black =0. РЎРѕР·РґР°РЅРёРµ С„СЂРµР№РјР° РґР°РЅРЅС‹С… РёР· СЂРµР»СѓСЊС‚Р°С‚РѕРІ 
+# РІС‹С‡РёСЃР»РµРЅРёСЏ СЃ 2 columns black Рё count, Рё РїРѕСЃС‚СЂРѕРµРЅРёРµ bar graph РґР»СЏ СЌС‚РѕРіРѕ С„СЂРµР№РјР°.
 black <- as.factor(c(0, 1))
 count0 <- length(subset(mydat, black == 0)$black)
 count1 <- length(subset(mydat, black == 1)$black)
@@ -46,23 +46,23 @@ barplot(df$count, names.arg=df$black)
 
 ####################################################################
 
-# Задание 2: Загрузка набора данных AirPassengers из источника данных: 
+# Р—Р°РґР°РЅРёРµ 2: Р—Р°РіСЂСѓР·РєР° РЅР°Р±РѕСЂР° РґР°РЅРЅС‹С… AirPassengers РёР· РёСЃС‚РѕС‡РЅРёРєР° РґР°РЅРЅС‹С…: 
 # url <https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/datasets/AirPassengers.csv>
 myfile <- getURL('https://raw.githubusercontent.com/vincentarelbundock/Rdatasets/master/csv/datasets/AirPassengers.csv', ssl.verifyhost=FALSE, ssl.verifypeer=FALSE)
 mydat <- read.csv(textConnection(myfile), header=T)
 head(mydat)
 
-#Задание 2.1: построение Line Graph зависимости AirPassengers от time для этого набора данных с использованием
-# базовой функции.
+#Р—Р°РґР°РЅРёРµ 2.1: РїРѕСЃС‚СЂРѕРµРЅРёРµ Line Graph Р·Р°РІРёСЃРёРјРѕСЃС‚Рё AirPassengers РѕС‚ time РґР»СЏ СЌС‚РѕРіРѕ РЅР°Р±РѕСЂР° РґР°РЅРЅС‹С… СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј
+# Р±Р°Р·РѕРІРѕР№ С„СѓРЅРєС†РёРё.
 plot(mydat$time, mydat$AirPassengers, type = "l")
 
-#Задание 2.2:построение Line Graph зависимости AirPassengers от time для этого набора данных с использованием
-# пакета ggpot2
+#Р—Р°РґР°РЅРёРµ 2.2:РїРѕСЃС‚СЂРѕРµРЅРёРµ Line Graph Р·Р°РІРёСЃРёРјРѕСЃС‚Рё AirPassengers РѕС‚ time РґР»СЏ СЌС‚РѕРіРѕ РЅР°Р±РѕСЂР° РґР°РЅРЅС‹С… СЃ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёРµРј
+# РїР°РєРµС‚Р° ggpot2
 library(ggplot2)
 qplot(mydat$time, mydat$AirPassengers, geom="line")
-# или:
+# РёР»Рё:
 qplot(time, AirPassengers, data=mydat, geom="line")
-# или:
+# РёР»Рё:
 ggplot(mydat, aes(x=time, y=AirPassengers)) + geom_line()
 
 #####################################################################
