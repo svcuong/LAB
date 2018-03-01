@@ -39,8 +39,9 @@ sample2 <- sc[idx,]
 observedLabels <- c(rep(1,n), rep(2,n), rep(3,n), rep(4,n), rep(5,n), rep(6,n))
 
 # compute DTW distances
-
+library(proxy)
 library(dtw)
+
 distMatrix <- dist(sample2, method="DTW")
 
 # hierarchical clustering

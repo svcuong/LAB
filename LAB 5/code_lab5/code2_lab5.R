@@ -27,3 +27,4 @@ testdata <- seq(0, 25000, by=500)
 testdata.norm <- (testdata - min.input) / range.input
 result <- round(compute(net, testdata.norm)$net.result * range.output + min.output)
 plot(testdata, result, main="Predicred outcome", xlab="Salary", ylab="Pension")
+
