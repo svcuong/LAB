@@ -5,9 +5,8 @@
 # Установить пакет ggplot2 для визуализации данных
 install.pacakges("ggplot2"
 
-                 
+##############################################                 
 # 1. Построение scatter plot
-##############################################
 # Использовать базовую функцию plot()
 plot(mtcars$wt, mtcars$mpg)
 
@@ -25,7 +24,7 @@ ggplot(mtcars, aes(x=wt, y=mpg)) + geom_point()
 
 
 # 2.2 Построение a Line Graph
-########################################################
+
 # Using plot()
 plot(pressure$temperature, pressure$pressure, type="l")
 # add points and/or multiple lines
