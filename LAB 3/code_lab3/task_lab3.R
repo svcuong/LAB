@@ -10,9 +10,10 @@ library(ggplot2)
 library(forecast)
 
 x <- AirPassengers
-
-length(x)
-k <- time(x)[100]
+# проверка длины набора данных
+length(x) # 144
+# длина для train dataset
+k <- time(x)[115] # 144*0.8 ~ 115
 # деления набора данных на train data и test data
 
 trainx <- window(x, end=k-1)
